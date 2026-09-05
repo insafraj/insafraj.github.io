@@ -1,0 +1,288 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="InsafRaj AI — AI voice and localization platform for Indian creators, educators and small businesses.">
+  <meta name="theme-color" content="#0b0d12">
+  <title>InsafRaj AI — Give every Indian creator a voice</title>
+  <style>
+    :root{
+      --bg:#0b0d12;
+      --panel:#11151d;
+      --panel2:#171c26;
+      --text:#f7f8fb;
+      --muted:#a8afbd;
+      --line:rgba(255,255,255,.10);
+      --accent:#f5c84c;
+      --accent2:#ffe08a;
+      --max:1120px;
+      --radius:24px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      background:
+        radial-gradient(circle at 85% 5%,rgba(245,200,76,.13),transparent 28%),
+        radial-gradient(circle at 5% 35%,rgba(88,101,255,.10),transparent 26%),
+        var(--bg);
+      color:var(--text);
+      font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;
+      line-height:1.6;
+    }
+    a{color:inherit;text-decoration:none}
+    .wrap{width:min(var(--max),92%);margin:auto}
+    header{
+      position:sticky;top:0;z-index:10;
+      background:rgba(11,13,18,.82);
+      backdrop-filter:blur(14px);
+      border-bottom:1px solid var(--line);
+    }
+    nav{
+      min-height:72px;display:flex;align-items:center;justify-content:space-between;gap:20px;
+    }
+    .brand{font-weight:800;letter-spacing:-.04em;font-size:20px}
+    .brand span{color:var(--accent)}
+    .navlinks{display:flex;gap:22px;align-items:center;font-size:14px;color:var(--muted)}
+    .navlinks a:hover{color:var(--text)}
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;
+      padding:12px 18px;border-radius:999px;font-weight:700;font-size:14px;
+      border:1px solid var(--line);transition:.2s ease;
+    }
+    .btn.primary{background:var(--accent);color:#17130a;border-color:var(--accent)}
+    .btn.primary:hover{transform:translateY(-1px);filter:brightness(1.04)}
+    .btn.ghost:hover{background:rgba(255,255,255,.06)}
+    .hero{padding:92px 0 76px}
+    .eyebrow{
+      display:inline-flex;align-items:center;gap:8px;
+      padding:7px 11px;border:1px solid rgba(245,200,76,.25);
+      background:rgba(245,200,76,.07);color:var(--accent2);
+      border-radius:999px;font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;
+    }
+    h1{
+      max-width:850px;font-size:clamp(48px,8vw,88px);
+      line-height:.98;letter-spacing:-.065em;margin:22px 0;
+    }
+    .highlight{
+      background:linear-gradient(transparent 58%,rgba(245,200,76,.82) 58%,rgba(245,200,76,.82) 88%,transparent 88%);
+      color:#fff;
+    }
+    .hero p{max-width:720px;color:var(--muted);font-size:19px}
+    .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+    section{padding:78px 0}
+    .section-head{max-width:700px;margin-bottom:30px}
+    .kicker{color:var(--accent);font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase}
+    h2{font-size:clamp(32px,5vw,52px);line-height:1.05;letter-spacing:-.045em;margin:9px 0 14px}
+    .lead{color:var(--muted);font-size:17px}
+    .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+    .card{
+      background:linear-gradient(180deg,rgba(255,255,255,.045),rgba(255,255,255,.018));
+      border:1px solid var(--line);border-radius:var(--radius);padding:24px;
+    }
+    .card .num{
+      width:38px;height:38px;border-radius:12px;
+      display:grid;place-items:center;background:rgba(245,200,76,.10);
+      color:var(--accent);font-weight:800;margin-bottom:20px;
+    }
+    .card h3{margin:0 0 8px;font-size:19px;letter-spacing:-.02em}
+    .card p{margin:0;color:var(--muted);font-size:14px}
+    .split{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+    .bigcard{padding:34px}
+    .bigcard h3{font-size:26px;margin:0 0 10px}
+    .list{display:grid;gap:12px;margin-top:20px}
+    .list div{display:flex;gap:12px;color:var(--muted)}
+    .dot{flex:0 0 8px;width:8px;height:8px;border-radius:50%;background:var(--accent);margin-top:9px}
+    .roadmap{display:grid;gap:12px}
+    .step{display:grid;grid-template-columns:90px 1fr;gap:18px;align-items:start;padding:22px;border:1px solid var(--line);border-radius:20px;background:rgba(255,255,255,.025)}
+    .phase{color:var(--accent);font-weight:800}
+    .step h3{margin:0 0 4px}
+    .step p{margin:0;color:var(--muted)}
+    .cta{
+      text-align:center;padding:64px 28px;border:1px solid rgba(245,200,76,.22);
+      border-radius:30px;background:linear-gradient(135deg,rgba(245,200,76,.10),rgba(255,255,255,.025));
+    }
+    .cta p{max-width:650px;margin:12px auto 24px;color:var(--muted)}
+    footer{border-top:1px solid var(--line);padding:30px 0 45px;color:var(--muted);font-size:13px}
+    .foot{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap}
+    .badge{color:#fff;border:1px solid var(--line);padding:7px 10px;border-radius:9px;font-size:11px;letter-spacing:.08em;font-weight:800}
+    @media(max-width:850px){
+      .grid{grid-template-columns:repeat(2,1fr)}
+      .split{grid-template-columns:1fr}
+      .navlinks a:not(.btn){display:none}
+    }
+    @media(max-width:560px){
+      .wrap{width:min(92%,520px)}
+      nav{min-height:64px}
+      .navlinks{gap:8px}
+      .navlinks .btn{padding:9px 13px}
+      .hero{padding:68px 0 52px}
+      h1{font-size:52px}
+      .hero p{font-size:16px}
+      section{padding:58px 0}
+      .grid{grid-template-columns:1fr}
+      .card,.bigcard{padding:22px}
+      .step{grid-template-columns:1fr;gap:5px}
+      .cta{padding:45px 20px}
+    }
+  </style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <nav>
+      <a class="brand" href="#">InsafRaj <span>AI</span></a>
+      <div class="navlinks">
+        <a href="#product">Product</a>
+        <a href="#why">Why us</a>
+        <a href="#business">Business</a>
+        <a href="#roadmap">Roadmap</a>
+        <a class="btn primary" href="#contact">Get in touch</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="wrap">
+      <div class="eyebrow">AI Voice • Localization • India</div>
+      <h1>Give every Indian creator a <span class="highlight">voice.</span></h1>
+      <p>
+        InsafRaj AI is building an AI-powered voice and localization platform
+        for Indian creators, educators and small businesses — helping great
+        content reach people across languages.
+      </p>
+      <div class="actions">
+        <a class="btn primary" href="#product">Explore the product</a>
+        <a class="btn ghost" href="#contact">Contact InsafRaj AI</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="why">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="kicker">The opportunity</div>
+        <h2>Great content should not stop at a language barrier.</h2>
+        <p class="lead">
+          Indian creators often have to manage recording, editing, translation
+          and dubbing as separate workflows. We want to make multilingual
+          voice production faster and more accessible.
+        </p>
+      </div>
+      <div class="split">
+        <div class="card bigcard">
+          <h3>Built for a multilingual market</h3>
+          <p class="lead">Start with Hindi and Indian regional-language content, then expand toward a broader multilingual creator ecosystem.</p>
+        </div>
+        <div class="card bigcard">
+          <h3>From content to conversation</h3>
+          <p class="lead">The long-term vision goes beyond narration into interactive voice experiences, education, support and AI-powered voice agents.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="product">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="kicker">Product</div>
+        <h2>One voice layer for the next generation of creators.</h2>
+      </div>
+      <div class="grid">
+        <div class="card"><div class="num">01</div><h3>AI Voiceovers</h3><p>Generate natural, expressive narration from scripts for videos, shorts and educational content.</p></div>
+        <div class="card"><div class="num">02</div><h3>Localization</h3><p>Create localized versions of content so creators can reach audiences across Indian languages.</p></div>
+        <div class="card"><div class="num">03</div><h3>Creator Voices</h3><p>Enable customizable voice experiences for creators and future branded content workflows.</p></div>
+        <div class="card"><div class="num">04</div><h3>Voice Agents</h3><p>Long-term: interactive voice experiences for businesses, education, support and creator communities.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="business">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="kicker">Business model</div>
+        <h2>Designed as a scalable SaaS business.</h2>
+        <p class="lead">The planned model combines accessible creator plans with higher-value business and usage-based offerings.</p>
+      </div>
+      <div class="grid">
+        <div class="card"><div class="num">F</div><h3>Free</h3><p>Entry-level access for creators to try the product and experience AI voice workflows.</p></div>
+        <div class="card"><div class="num">C</div><h3>Creator</h3><p>Paid subscriptions with higher limits, premium voice and localization capabilities.</p></div>
+        <div class="card"><div class="num">B</div><h3>Business</h3><p>Higher-volume workflows and business-focused voice experiences.</p></div>
+        <div class="card"><div class="num">A</div><h3>API / Agents</h3><p>Future usage-based access for integrations and interactive voice applications.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="section-head">
+        <div class="kicker">Technology</div>
+        <h2>Voice infrastructure built around powerful AI capabilities.</h2>
+        <p class="lead">
+          ElevenLabs capabilities can support the product vision across text-to-speech,
+          speech workflows, voice design and conversational experiences.
+        </p>
+      </div>
+      <div class="split">
+        <div class="card bigcard">
+          <h3>Why ElevenLabs</h3>
+          <div class="list">
+            <div><span class="dot"></span><span>Natural and expressive AI voice generation.</span></div>
+            <div><span class="dot"></span><span>Multilingual voice capabilities suited to localization.</span></div>
+            <div><span class="dot"></span><span>Voice design and customization possibilities.</span></div>
+            <div><span class="dot"></span><span>Future-ready conversational voice experiences.</span></div>
+          </div>
+        </div>
+        <div class="card bigcard">
+          <h3>What we are building</h3>
+          <p class="lead">
+            A focused product experience around the needs of Indian creators,
+            rather than a generic voice-generation interface — with localization
+            and creator workflows at the center.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="roadmap">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="kicker">Roadmap</div>
+        <h2>Start focused. Build for scale.</h2>
+      </div>
+      <div class="roadmap">
+        <div class="step"><div class="phase">01 • NOW</div><div><h3>Prototype</h3><p>Validate the core voice and localization workflow.</p></div></div>
+        <div class="step"><div class="phase">02</div><div><h3>Creator testing</h3><p>Test with real creator workflows and improve usability, quality and speed.</p></div></div>
+        <div class="step"><div class="phase">03</div><div><h3>SaaS launch</h3><p>Introduce subscription plans and a scalable product experience.</p></div></div>
+        <div class="step"><div class="phase">04</div><div><h3>Voice ecosystem</h3><p>Expand into conversational voice, education, support and AI-powered voice applications.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="wrap">
+      <div class="cta">
+        <div class="kicker">InsafRaj AI</div>
+        <h2>Building a multilingual future for creators.</h2>
+        <p>
+          We are developing the foundation for accessible AI voice and
+          localization experiences across India.
+        </p>
+        <span class="btn ghost">Early access coming soon</span>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <div>© 2026 InsafRaj AI. Built for a multilingual future.</div>
+    <div class="badge">ELEVEN LABS CAPABILITIES</div>
+  </div>
+</footer>
+</body>
+</html>
